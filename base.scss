@@ -1,25 +1,10 @@
 // -----------------------------------------------------------
-// Base Mixins
-// @file base.scss
-// @author Daryn St. Pierre, daryn@bloqmail.com
-// -----------------------------------------------------------
-// Mixin Contents -- as of 07/12/2012
-// * reset (simple or Eric Meyer's)
-// * base font families
-// * clearfix
-// * legibility
-// * border-radius
-// * gradient (includes CSS3PIE support if desired)
-// * striped (also includes CSS3PIE support)
-// * box-shadow (supports up to 9 shadows)
-// * text-shadow
-// * opacity
-// * transition
-// * hide-text (alternative to 'display: none;')
-// * font-face
+// Base SCSS
+// Daryn St. Pierre
+// https://github.com/bloqhead/Base-SCSS
 // -----------------------------------------------------------
 
-// reset -- define the $type as simple if you don't want all of the bells and whistles that Eric Meyer's reset offers
+// reset
 @mixin reset($type: '') {
 	@if $type == 'simple' {
 		* {
@@ -155,15 +140,15 @@ $verdana: Verdana, Geneva, sans-serif;
 	opacity: $opacity;
 }
 
-// transition -- $speed should be passed in 0.0 format
+// transition -- $speed should be passed in decimal format
 @mixin transition($speed, $type) {
 	-webkit-transition: #{$speed}s linear $type;
 	-moz-transition: #{$speed}s linear $type;
 	transition: #{$speed}s linear $type;
 }
 
-// hide text -- alternative to -999em method
-@mixin hide-text {
+// image replacement
+@mixin img-rep {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;

@@ -17,8 +17,8 @@ These are the current tools and mixins I've implemented:
 * text-shadow
 * opacity *(includes ms-filter fallback)*
 * transition
-* hide-text *(based on [Kellum Method][kellum])*
-* font-face
+* img-rep *(image replacement based on [Kellum Method][kellum]. an alternative to the negative indent method)*
+* font-face (based on [Font Squirrel's][fontsquirrel] method)
 
 ### License
 Base SCSS is released under a [Creative Commons Attribution-Share Alike 3.0 Unported License][ccl]. This means you can copy, distribute, transmit and adapt the work to your own personal and commercial projects.
@@ -30,3 +30,4 @@ Base SCSS is released under a [Creative Commons Attribution-Share Alike 3.0 Unpo
 [css3pie]: http://css3pie.com "CSS3PIE"
 [patterns]: http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/ "Checkerboard, striped & other background patterns with CSS3 gradients"
 [reset]: http://meyerweb.com/eric/tools/css/reset/ "Eric Meyer's CSS Reset"
+[fontsquirrel]: http://fontsquirrel.com "Free fonts for graphic designers"
