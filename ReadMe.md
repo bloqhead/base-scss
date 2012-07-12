@@ -20,14 +20,26 @@ These are the current tools and mixins I've implemented:
 * img-rep *(image replacement based on [Kellum Method][kellum]. an alternative to the negative indent method)*
 * font-face (based on [Font Squirrel's][fontsquirrel] method)
 
+## How to use it
+If you're already familiar with Sass compilers like [LiveReload][livereload] and [Compass][compassapp], then you're on the right track. If not, check them out. You'll want to grab one of those and read their documentation (always RTFM) to get an idea of how it works. Base SCSS is made to be included into a primary Sass file that houses all of the styles for your project, or repurposed as your starting base file itself. If you aren't familiar with Sass or preprocessors in general, I recommend giving the [base tutorial][sasstut] a try and reading the [documentation][sass].
+
+* [LiveReload documentation][lrdoc]
+* [Compass.app documentation][cadoc]
+
 ### License
 Base SCSS is released under a [Creative Commons Attribution-Share Alike 3.0 Unported License][ccl]. This means you can copy, distribute, transmit and adapt the work to your own personal and commercial projects.
 
 [bourbon]: https://github.com/thoughtbot/bourbon "Bourbon by @thoughtbot"
-[compass]: https://github.com/chriseppstein/compass "Compass by @scottdavis"
 [ccl]: http://creativecommons.org/licenses/by-sa/3.0/ "Creative Commons Attribution-Share Alike 3.0 Unported License"
 [kellum]: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ "Replacing the -9999px Hack (New Image Replacement)"
 [css3pie]: http://css3pie.com "CSS3PIE"
 [patterns]: http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/ "Checkerboard, striped & other background patterns with CSS3 gradients"
 [reset]: http://meyerweb.com/eric/tools/css/reset/ "Eric Meyer's CSS Reset"
 [fontsquirrel]: http://fontsquirrel.com "Free fonts for graphic designers"
+[livereload]: http://livereload.com/ "The Web Developer Wonderland"
+[lrdoc]: http://livereload.com/#getting-started "Getting started with LiveReload"
+[compass]: https://github.com/chriseppstein/compass "Compass by @scottdavis"
+[compassapp]: http://compass.handlino.com/ "Compass.app by Handlino"
+[cadoc]: https://github.com/handlino/CompassApp/wiki "Compass.app documentation wiki"
+[sass]: http://sass-lang.com/ "Sass. Style with attitude"
+[sasstut]: http://sass-lang.com/tutorial.html "Getting started with Sass"
