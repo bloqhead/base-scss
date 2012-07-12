@@ -6,7 +6,7 @@ This simple reference file contains some mixins that are modeled after those ava
 ## Mixins &amp; Tools
 These are the current tools and mixins I've implemented:
 
-* reset *(simple or Eric Meyer's)*
+* reset *(simple or [Eric Meyer's][reset])*
 * base font families
 * clearfix
 * legibility
@@ -29,3 +29,4 @@ Base SCSS is released under a [Creative Commons Attribution-Share Alike 3.0 Unpo
 [kellum]: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ "Replacing the -9999px Hack (New Image Replacement)"
 [css3pie]: http://css3pie.com "CSS3PIE"
 [patterns]: http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/ "Checkerboard, striped & other background patterns with CSS3 gradients"
+[reset]: http://meyerweb.com/eric/tools/css/reset/ "Eric Meyer's CSS Reset"
