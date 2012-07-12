@@ -9,15 +9,14 @@
 // * clearfix
 // * legibility
 // * border-radius
-// * gradient background
-// * striped background
-// * box-shadow (advanced)
+// * gradient (includes CSS3PIE support if desired)
+// * striped (also includes CSS3PIE support)
+// * box-shadow (supports up to 9 shadows)
 // * text-shadow
 // * opacity
 // * transition
 // * hide-text (alternative to 'display: none;')
 // * font-face
-// * button
 // -----------------------------------------------------------
 
 // reset -- define the $type as simple if you don't want all of the bells and whistles that Eric Meyer's reset offers
@@ -165,9 +164,9 @@ $verdana: Verdana, Geneva, sans-serif;
 
 // hide text -- alternative to -999em method
 @mixin hide-text {
-	font: 0/0 a;
-	text-shadow: none;
-	color: transparent;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 }
 // custom font face
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal ) {
