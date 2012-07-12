@@ -106,7 +106,7 @@ $verdana: Verdana, Geneva, sans-serif;
 	}
 }
 
-// angled stripes -- see Lea Verou's awesome examples - http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/
+// angled stripes
 @mixin stripes($backgroundStripeSize, $backgroundBaseColor, $pie: '') {
 	background-size: #{$backgroundStripeSize};
 	background-color: #{$backgroundBaseColor};

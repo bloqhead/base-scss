@@ -12,7 +12,7 @@ These are the current tools and mixins I've implemented:
 * legibility
 * border-radius
 * gradient *(includes [CSS3PIE][css3pie] support if desired)*
-* striped *(also includes CSS3PIE support)*
+* angled stripes *(based on [Lea Verou's examples][patterns])*
 * box-shadow *(supports up to 9 shadows)*
 * text-shadow
 * opacity *(includes ms-filter fallback)*
@@ -28,3 +28,4 @@ Base SCSS is released under a [Creative Commons Attribution-Share Alike 3.0 Unpo
 [ccl]: http://creativecommons.org/licenses/by-sa/3.0/ "Creative Commons Attribution-Share Alike 3.0 Unported License"
 [kellum]: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ "Replacing the -9999px Hack (New Image Replacement)"
 [css3pie]: http://css3pie.com "CSS3PIE"
+[patterns]: http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/ "Checkerboard, striped & other background patterns with CSS3 gradients"
