@@ -1,0 +1,184 @@
+// -----------------------------------------------------------
+// Base Mixins
+// @file base.scss
+// @author Daryn St. Pierre, daryn@bloqmail.com
+// -----------------------------------------------------------
+// Mixin Contents -- as of 07/12/2012
+// * reset (simple or Eric Meyer's)
+// * base font families
+// * clearfix
+// * legibility
+// * border-radius
+// * gradient background
+// * striped background
+// * box-shadow (advanced)
+// * text-shadow
+// * opacity
+// * transition
+// * hide-text (alternative to 'display: none;')
+// * font-face
+// * button
+// -----------------------------------------------------------
+
+// reset -- define the $type as simple if you don't want all of the bells and whistles that Eric Meyer's reset offers
+@mixin reset($type: '') {
+	@if $type == 'simple' {
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+	} @else {
+		/* http://meyerweb.com/eric/tools/css/reset/ - v2.0 | 20110126 - License: none (public domain) */
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section { display: block; }
+		body { line-height: 1; }
+		ol, ul { list-style: none; }
+		blockquote, q { quotes: none; }
+		blockquote:before, blockquote:after,
+		q:before, q:after { content: ''; content: none; }
+		table { border-collapse: collapse; border-spacing: 0; }
+	}
+}
+
+// font families
+$georgia: Georgia, Cambria, "Times New Roman", Times, serif;
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$lucida-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$monospace: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+$verdana: Verdana, Geneva, sans-serif;
+
+// clearfix -- call to with @extend
+.clearfix {
+	zoom: 1;
+	&:before {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// legibility
+@mixin legibility {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+// border radius -- add more prefixes if you want them
+@mixin border-radius($radius: 10px, $prefixes: -moz -webkit) {
+	@each $prefix in $prefixes {
+		#{$prefix}-border-radius: $radius;
+	}
+	border-radius: $radius;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+// gradient -- call to pie if you want CSS3PIE support - http://css3pie.com
+@mixin gradient($top, $bottom, $pie: '') {
+	background: lighten($bottom, 20%);
+	background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom));
+	background: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
+	background: -o-linear-gradient(top, $top 0%, $bottom 100%);
+	background: -ms-linear-gradient(top, $top 0%, $bottom 100%);
+	background: linear-gradient(top, $top 0%, $bottom 100%);
+	@if $pie == 'pie' {
+		-pie-background: linear-gradient(top, $top 0%, $bottom 100%);
+	}
+}
+
+// angled stripes -- see Lea Verou's awesome examples - http://lea.verou.me/2010/12/checkered-stripes-other-background-patterns-with-css3-gradients/
+@mixin stripes($backgroundStripeSize, $backgroundBaseColor, $pie: '') {
+	background-size: #{$backgroundStripeSize};
+	background-color: #{$backgroundBaseColor};
+	background-image:
+		-webkit-gradient(linear, 0 0, 100% 100%,
+		color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent),
+		color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)),
+		color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+		to(transparent));
+	background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	@if $pie == 'pie' {
+		-pie-background: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	}
+}
+
+// box shadow - supports up to 9 shadows
+@mixin box-shadow($shadow-1, $shadow-2: false, $shadow-3: false, $shadow-4: false, $shadow-5: false, $shadow-6: false, $shadow-7: false, $shadow-8: false, $shadow-9: false) {
+	$full: $shadow-1;
+	@if $shadow-2 { $full: $full, $shadow-2 }
+	@if $shadow-3 { $full: $full, $shadow-3 }
+	@if $shadow-4 { $full: $full, $shadow-4 }
+	@if $shadow-5 { $full: $full, $shadow-5 }
+	@if $shadow-6 { $full: $full, $shadow-6 }
+	@if $shadow-7 { $full: $full, $shadow-7 }
+	@if $shadow-8 { $full: $full, $shadow-8 }
+	@if $shadow-9 { $full: $full, $shadow-9 }
+	-moz-box-shadow: $full;
+	-webkit-box-shadow: $full;
+	box-shadow: $full;
+}
+
+// text shadow -- falls back to "1px 1px 0 #000"
+@mixin text-shadow($x: 1px, $y: 1px, $blur: 0, $color: #000) {
+	text-shadow: $x $y $blur $color;
+	filter: dropshadow(color=#{$color}, offx=#{$x}, offy=#{$y});
+}
+
+// opacity -- $opacity should be passed in 0.0 format
+@mixin opacity($opacity) {
+	filter: alpha(opacity= + round($opacity*100));
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity= + round($opacity*100));
+	-moz-opacity: $opacity;
+	opacity: $opacity;
+}
+
+// transition -- $speed should be passed in 0.0 format
+@mixin transition($speed, $type) {
+	-webkit-transition: #{$speed}s linear $type;
+	-moz-transition: #{$speed}s linear $type;
+	transition: #{$speed}s linear $type;
+}
+
+// hide text -- alternative to -999em method
+@mixin hide-text {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+// custom font face
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal ) {
+	@font-face {
+		font-family: $font-family;
+		src: url('#{$file-path}.eot');
+		src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+		     url('#{$file-path}.woff') format('woff'),
+		     url('#{$file-path}.ttf') format('truetype'),
+		     url('#{$file-path}.svg##{$font-family}') format('svg');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
