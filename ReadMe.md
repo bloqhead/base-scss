@@ -7,7 +7,9 @@ This simple reference file contains some mixins that are modeled after those ava
 These are the current tools and mixins I've implemented:
 
 * reset *(simple or [Eric Meyer's][reset])*
-* base font families
+* font families
+* form fields
+* form buttons
 * clearfix
 * legibility
 * ~~border-radius~~ radius
