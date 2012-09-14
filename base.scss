@@ -46,6 +46,13 @@ $lucida-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
 $monospace: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
 $verdana: Verdana, Geneva, sans-serif;
 
+// headings
+$headings: 'h1, h2, h3, h4, h5, h6';
+
+// form fields
+$form-buttons: "button, .button, .btn, input[type=submit], input[type=reset]";
+$form-inputs: 'input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"],  input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], textarea';
+
 // clearfix -- call to with @extend
 .clearfix {
 	zoom: 1;
@@ -67,7 +74,7 @@ $verdana: Verdana, Geneva, sans-serif;
 }
 
 // border radius -- add more prefixes if you want them
-@mixin border-radius($radius: 10px, $prefixes: -moz -webkit) {
+@mixin radius($radius: 10px, $prefixes: -moz -webkit) {
 	@each $prefix in $prefixes {
 		#{$prefix}-border-radius: $radius;
 	}
@@ -148,13 +155,13 @@ $verdana: Verdana, Geneva, sans-serif;
 }
 
 // image replacement
-@mixin img-rep {
+@mixin imgrep {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
 }
 // custom font face
-@mixin font-face($font-family, $file-path, $weight: normal, $style: normal ) {
+@mixin font($font-family, $file-path, $weight: normal, $style: normal ) {
 	@font-face {
 		font-family: $font-family;
 		src: url('#{$file-path}.eot');
