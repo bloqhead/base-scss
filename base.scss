@@ -5,38 +5,30 @@
 // -----------------------------------------------------------
 
 // reset
-@mixin reset($type: '') {
-	@if $type == 'simple' {
-		* {
-			margin: 0;
-			padding: 0;
-			border: 0;
-		}
-	} @else {
-		/* http://meyerweb.com/eric/tools/css/reset/ - v2.0 | 20110126 - License: none (public domain) */
-		html, body, div, span, applet, object, iframe,
-		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-		a, abbr, acronym, address, big, cite, code,
-		del, dfn, em, img, ins, kbd, q, s, samp,
-		small, strike, strong, sub, sup, tt, var,
-		b, u, i, center,
-		dl, dt, dd, ol, ul, li,
-		fieldset, form, label, legend,
-		table, caption, tbody, tfoot, thead, tr, th, td,
-		article, aside, canvas, details, embed, 
-		figure, figcaption, footer, header, hgroup, 
-		menu, nav, output, ruby, section, summary,
-		time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
-		/* HTML5 display-role reset for older browsers */
-		article, aside, details, figcaption, figure, 
-		footer, header, hgroup, menu, nav, section { display: block; }
-		body { line-height: 1; }
-		ol, ul { list-style: none; }
-		blockquote, q { quotes: none; }
-		blockquote:before, blockquote:after,
-		q:before, q:after { content: ''; content: none; }
-		table { border-collapse: collapse; border-spacing: 0; }
-	}
+@mixin reset {
+	/* http://meyerweb.com/eric/tools/css/reset/ - v2.0 | 20110126 - License: none (public domain) */
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section { display: block; }
+	body { line-height: 1; }
+	ol, ul { list-style: none; }
+	blockquote, q { quotes: none; }
+	blockquote:before, blockquote:after,
+	q:before, q:after { content: ''; content: none; }
+	table { border-collapse: collapse; border-spacing: 0; }
 }
 
 // font families
@@ -98,25 +90,6 @@ $form-inputs: 'input[type="email"], input[type="number"], input[type="password"]
 	}
 }
 
-// angled stripes
-@mixin stripes($backgroundStripeSize, $backgroundBaseColor, $pie: '') {
-	background-size: #{$backgroundStripeSize};
-	background-color: #{$backgroundBaseColor};
-	background-image:
-		-webkit-gradient(linear, 0 0, 100% 100%,
-		color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent),
-		color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)),
-		color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
-		to(transparent));
-	background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
-	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
-	background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
-	background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
-	@if $pie == 'pie' {
-		-pie-background: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
-	}
-}
-
 // box shadow - supports up to 9 shadows
 @mixin box-shadow($shadow-1, $shadow-2: false, $shadow-3: false, $shadow-4: false, $shadow-5: false, $shadow-6: false, $shadow-7: false, $shadow-8: false, $shadow-9: false) {
 	$full: $shadow-1;
@@ -136,7 +109,6 @@ $form-inputs: 'input[type="email"], input[type="number"], input[type="password"]
 // text shadow -- falls back to "1px 1px 0 #000"
 @mixin text-shadow($x: 1px, $y: 1px, $blur: 0, $color: #000) {
 	text-shadow: $x $y $blur $color;
-	filter: dropshadow(color=#{$color}, offx=#{$x}, offy=#{$y});
 }
 
 // opacity -- $opacity should be passed in 0.0 format
