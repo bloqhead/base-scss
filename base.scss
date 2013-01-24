@@ -85,6 +85,7 @@ $form-inputs: 'input[type="email"], input[type="number"], input[type="password"]
 	background: -o-linear-gradient(top, $top 0%, $bottom 100%);
 	background: -ms-linear-gradient(top, $top 0%, $bottom 100%);
 	background: linear-gradient(top, $top 0%, $bottom 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$top}', endColorstr='#{$bottom}');
 	@if $pie == 'pie' {
 		-pie-background: linear-gradient(top, $top 0%, $bottom 100%);
 	}
