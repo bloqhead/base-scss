@@ -12,6 +12,7 @@ These are the current tools and mixins I've implemented:
 * form buttons
 * clearfix
 * legibility
+* rotate
 * ~~border-radius~~ radius
 * gradient *(includes [CSS3PIE][css3pie] support if desired)*
 * stripes *(based on [Lea Verou's examples][patterns])*
