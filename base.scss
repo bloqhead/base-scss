@@ -65,6 +65,14 @@ $form-inputs: 'input[type="email"], input[type="number"], input[type="password"]
 	text-rendering: optimizeLegibility;
 }
 
+// rotate -- add more prefixes if you want them
+// note: does not work in IE8 or lower
+@mixin rotate($deg: '', $prefixes: -moz -webkit -ms) {
+	@each $prefix in $prefixes {
+		#{$prefix}-transform: rotate(#{$deg}deg);
+	}
+}
+
 // border radius -- add more prefixes if you want them
 @mixin radius($radius: 10px, $prefixes: -moz -webkit) {
 	@each $prefix in $prefixes {
