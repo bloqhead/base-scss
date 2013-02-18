@@ -45,8 +45,10 @@ $headings: 'h1, h2, h3, h4, h5, h6';
 $form-buttons: "button, .button, .btn, input[type=submit], input[type=reset]";
 $form-inputs: 'input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"],  input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], textarea';
 
-// clearfix -- call to with @extend
-.clearfix {
+// clearfix - call to with @include
+// No longer auto-dumps it to your compiled CSS
+// Example: .clear, .clearfix { @include clearfix; }
+@mixin clearfix {
 	zoom: 1;
 	&:before {
 		content: "\0020";

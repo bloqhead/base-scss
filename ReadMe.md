@@ -6,7 +6,7 @@ This simple reference file contains some mixins that are modeled after those ava
 ## Mixins &amp; Tools
 These are the current tools and mixins I've implemented:
 
-* reset *(simple or [Eric Meyer's][reset])*
+* reset *([Eric Meyer's][reset])*
 * font families
 * form fields
 * form buttons
