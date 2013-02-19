@@ -10,14 +10,12 @@ These are the current tools and mixins I've implemented:
 * font families
 * form fields
 * form buttons
-* clearfix
+* clearfix *(now included as a mixin)*
 * legibility
 * rotate
 * ~~border-radius~~ radius
 * gradient *(includes [CSS3PIE][css3pie] support if desired)*
-* stripes *(based on [Lea Verou's examples][patterns])*
 * box-shadow *(supports up to 9 shadows)*
-* text-shadow
 * opacity *(includes ms-filter fallback)*
 * transition
 * ~~img-rep~~ imgrep *(image replacement based on [Kellum Method][kellum]. an alternative to the negative indent method)*
