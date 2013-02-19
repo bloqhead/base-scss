@@ -19,7 +19,7 @@ These are the current tools and mixins I've implemented:
 * opacity *(includes ms-filter fallback)*
 * transition
 * ~~img-rep~~ imgrep *(image replacement based on [Kellum Method][kellum]. an alternative to the negative indent method)*
-* ~~font-face~~ font (based on [Font Squirrel's][fontsquirrel] method)
+* ~~font-face~~ font *(based on [Font Squirrel's][fontsquirrel] method)*
 
 ## How to use it
 If you're already familiar with compilers like [LiveReload][livereload] and [Compass][compassapp], then you're on the right track. If not, check them out. If you're not a GUI guy and would rather do things in command line, [there's that also][sassdoc]. You'll want to grab one of those and read their documentation (always RTFM) to get an idea of how it works. Base SCSS is made to be included into a primary Sass file that houses all of the styles for your project, or repurposed as your starting base file itself. If you aren't familiar with Sass or preprocessors in general, I recommend giving the [base tutorial][sasstut] a try and reading the [documentation][sass].
