@@ -86,6 +86,14 @@ $form-inputs: 'input[type="email"], input[type="number"], input[type="password"]
 	background-clip: padding-box;
 }
 
+// background size
+@mixin bgsize($type) {
+	-webkit-background-size: $type;
+	-moz-background-size: $type;
+	-o-background-size: $type;
+	background-size: $type;
+}
+
 // gradient -- call to pie if you want CSS3PIE support - http://css3pie.com
 @mixin gradient($top, $bottom, $pie: '') {
 	background: lighten($bottom, 20%);
