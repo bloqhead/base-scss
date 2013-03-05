@@ -87,11 +87,16 @@ $form-inputs: 'input[type="email"], input[type="number"], input[type="password"]
 }
 
 // background size
-@mixin bgsize($type) {
+// uses a polyfill fallback -- https://github.com/louisremi/background-size-polyfill
+// you must define the absolute path to the polyfill HTC file via the $pfPath var!
+@mixin bgsize($type, $polyfill: '', $pfPath: '') {
 	-webkit-background-size: $type;
 	-moz-background-size: $type;
 	-o-background-size: $type;
 	background-size: $type;
+	@if $polyfill == 'polyfill' {
+		-ms-behavior: url(#{$pfPath});
+	}
 }
 
 // gradient -- call to pie if you want CSS3PIE support - http://css3pie.com
