@@ -1,0 +1,20 @@
+// Clean lists
+@mixin cleanlist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Horizontal lists
+@mixin inlinelist {
+	display: block;
+	@include cleanlist;
+
+	li {
+		display: inline;
+	}
+
+	a {
+		display: inline-block;
+	}
+}

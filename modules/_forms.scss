@@ -1,0 +1,12 @@
+// Form inputs mixin
+@mixin inputz {
+	@each $input in $inputs {
+		input[type="#{$input}"] {
+			@content;
+		}
+	}
+
+	textarea {
+		@content;
+	}
+}

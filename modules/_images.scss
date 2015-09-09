@@ -1,0 +1,11 @@
+// Responsive Images
+@mixin fluidimage($force-width: force) {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	@if $force-width == force {
+		width: auto;
+	} @else {
+		width: 100%;
+	}
+}

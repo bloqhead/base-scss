@@ -1,0 +1,14 @@
+// Iconify
+// Requires Font Awesome
+// https://fortawesome.github.io/Font-Awesome/
+@mixin iconify( $unicode ) {
+	&:before {
+		content: $unicode;
+		display: inline-block;
+		font-family: 'FontAwesome';
+		font-size: inherit;
+		font-weight: normal;
+		color: inherit;
+		vertical-align: middle;
+	}
+}

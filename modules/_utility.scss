@@ -1,0 +1,89 @@
+// Opacity
+// Should be passed in 0.0 format
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	filter: alpha(opacity= + round($opacity*100));
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity= + round($opacity*100));
+}
+
+// Micro Clearfix
+// If you're using Bourbon, you don't need this
+@mixin clearfix {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+// Hyphen fix because iOS Safari is stupid
+// (recommend 'manual')
+// behaviors: auto, manual, none
+@mixin hyphenfix($behavior) {
+	-webkit-hyphens: $behavior;
+	   -moz-hyphens: $behavior;
+	        hyphens: $behavior;
+}
+
+// Disable selection
+@mixin noselect {
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+	     -moz-user-select: none;
+	      -ms-user-select: none;
+	          user-select: none;
+}
+
+// Flexmenu
+// TEST THIS
+@mixin flexmenu {
+	width: 100%;
+	text-align: center;
+	display: table; // IE9
+	@include display(flex);
+	@include box-sizing(border-box);
+	@include align-items(stretch);
+	@include align-content(stretch);
+	@include justify-content(center);
+	@include flex-flow(row wrap);
+
+	> li {
+		display: table-cell; // IE9
+		@include flex(1);
+		@include align-self(stretch);
+	}
+}
+
+// Pseudo Shifter
+// Creates a faux full-width element
+// that goes outside its parent element.
+@mixin pseudoshift {
+	position: relative;
+	overflow: visible;
+	z-index: 0;
+
+	&:before, &:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		display: block;
+		content: " ";
+		background-color: inherit;
+		width: 9999em;
+	}
+
+	&:before {
+		left: -9999em;
+	}
+
+	&:after {
+		right: -9999em;
+	}
+}

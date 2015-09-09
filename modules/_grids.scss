@@ -1,0 +1,41 @@
+// Simple Bourbon + Neat Grid
+@for $count from 1 through 12 {
+	@if $count == 12 {
+		.g-12 {
+			width: 100%;
+			display: block;
+			overflow: hidden;
+			@include clearfix;
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	} @else {
+		.g-#{$count} {
+			@include span-columns($count);
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+// Neat column reset
+@mixin reset-columns($new_span: 3, $old_span: 4) {
+	$old_nth: 12 / $old_span;
+	$new_nth: 12 / $new_span;
+
+	// Reset the old nth child
+	&:nth-child(#{$old_nth}n) {
+		margin-right: flex-gutter(container-span(#{$old_span}));
+	}
+
+	// Set up the new one
+	&:nth-child(#{$new_nth}n) {
+		margin-right: 0;
+	}
+}
