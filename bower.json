@@ -21,7 +21,12 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "Gruntfile.js",
+    "ReadMe.md",
+    "bower.json",
+    "package.json",
+    "*.xml"
   ],
   "version": "1.5.0",
   "homepage": "https://github.com/bloqhead/Base-SCSS",
