@@ -1,0 +1,15 @@
+// Micro Clearfix
+// If you're using Bourbon, you don't need this
+@mixin clearfix {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}

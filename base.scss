@@ -49,4 +49,6 @@ $inputs: 			email, number, password, search, tel, text, url, color, date, dateti
 
 @if $bourbon == true {
 	@import 'modules/grids';
+} @else {
+	@import 'modules/clearfix';
 }

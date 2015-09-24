@@ -6,22 +6,6 @@
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity= + round($opacity*100));
 }
 
-// Micro Clearfix
-// If you're using Bourbon, you don't need this
-@mixin clearfix {
-	*zoom: 1;
-
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-
-	&:after {
-		clear: both;
-	}
-}
-
 // Hyphen fix because iOS Safari is stupid
 // (recommend 'manual')
 // behaviors: auto, manual, none

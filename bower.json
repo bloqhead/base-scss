@@ -1,0 +1,32 @@
+{
+  "name": "base-scss",
+  "description": "Base SCSS library that contains mixins and helpful tools.",
+  "main": [
+    "base.scss"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "sass",
+    "scss",
+    "css"
+  ],
+  "authors": [
+    "Daryn St. Pierre <daryn@bloqmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.5.0",
+  "homepage": "https://github.com/bloqhead/Base-SCSS",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bloqhead/Base-SCSS.git"
+  }
+}
