@@ -25,26 +25,6 @@
 	          user-select: none;
 }
 
-// Flexmenu
-// TEST THIS
-@mixin flexmenu {
-	width: 100%;
-	text-align: center;
-	display: table; // IE9
-	@include display(flex);
-	@include box-sizing(border-box);
-	@include align-items(stretch);
-	@include align-content(stretch);
-	@include justify-content(center);
-	@include flex-flow(row wrap);
-
-	> li {
-		display: table-cell; // IE9
-		@include flex(1);
-		@include align-self(stretch);
-	}
-}
-
 // Pseudo Shifter
 // Creates a faux full-width element
 // that goes outside its parent element.

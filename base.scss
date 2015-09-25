@@ -17,7 +17,11 @@
 // Variables and Settings
 //
 
+//
 // Bourbon and Neat
+// Set both to true if you want to use
+// the Neat grids module.
+//
 $bourbon: 			false;
 $neat: 				false;
 
@@ -46,7 +50,11 @@ $inputs: 			email, number, password, search, tel, text, url, color, date, dateti
 @import 'modules/lists';
 @import 'modules/type';
 @import 'modules/utility';
+@import 'modules/flexmenu';
 
+//
+// Bourbon + Neat Grids
+//
 @if $bourbon == true {
 	@import 'modules/grids';
 } @else {
