@@ -22,24 +22,24 @@
 // Set both to true if you want to use
 // the Neat grids module.
 //
-$bourbon: 			false;
-$neat: 				false;
+$bourbon:           false;
+$neat:              false;
 
 // Font Families
-$georgia: 			Georgia, Cambria, "Times New Roman", Times, serif;
-$helvetica: 		"Helvetica Neue", Helvetica, Arial, sans-serif;
-$lucida-grande: 	"Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-$monospace: 		"Bitstream Vera Sans Mono", Consolas, Courier, monospace;
-$verdana: 			Verdana, Geneva, sans-serif;
+$georgia:           Georgia, Cambria, "Times New Roman", Times, serif;
+$helvetica:         "Helvetica Neue", Helvetica, Arial, sans-serif;
+$lucida-grande:     "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$monospace:         "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+$verdana:           Verdana, Geneva, sans-serif;
 
 // Headings
-$headings: 			'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6';
+$headings:          'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6';
 
 // Form buttons
-$form-buttons: 		'button, .button, .btn, input[type="submit"], input[type="reset"]';
+$form-buttons:      'button, .button, .btn, input[type="submit"], input[type="reset"]';
 
 // Form inputs
-$inputs: 			email, number, password, search, tel, text, url, color, date, datetime, datetime-local, month, time, week;
+$inputs:            email, number, password, search, tel, text, url, color, date, datetime, datetime-local, month, time, week;
 
 //
 // Modules
@@ -56,7 +56,7 @@ $inputs: 			email, number, password, search, tel, text, url, color, date, dateti
 // Bourbon + Neat Grids
 //
 @if $bourbon == true {
-	@import 'modules/grids';
+  @import 'modules/grids';
 } @else {
-	@import 'modules/clearfix';
+  @import 'modules/clearfix';
 }

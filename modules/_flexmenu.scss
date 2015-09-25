@@ -5,71 +5,71 @@
 // after including this.
 //
 @mixin flexmenu {
-	width: 100%;
-	text-align: center;
+  width: 100%;
+  text-align: center;
 
-	// IE9
-	display: table;
+  // IE9
+  display: table;
 
-	// Modern browsers
-	display: -webkit-box;
-	display: -moz-box;
-	display: box;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flexbox;
-	display: flex;
+  // Modern browsers
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
 
-	 -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	         box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 
-	  -webkit-box-align: stretch;
-	     -moz-box-align: stretch;
-	     -ms-flex-align: stretch;
-	          box-align: stretch;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-flex-align: stretch;
+  box-align: stretch;
 
-	-webkit-align-items: stretch;
-	   -moz-align-items: stretch;
-	    -ms-align-items: stretch;
-	        align-items: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  align-items: stretch;
 
   -webkit-align-content: stretch;
-	 -moz-align-content: stretch;
-	      align-content: stretch;
+  -moz-align-content: stretch;
+  align-content: stretch;
 
-	 -ms-flex-line-pack: stretch;
-	      -ms-flex-pack: center;
-	   -webkit-box-pack: center;
-	      -moz-box-pack: center;
-	           box-pack: center;
+  -ms-flex-line-pack: stretch;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
 
--webkit-justify-content: center;
-   -moz-justify-content: center;
-	-ms-justify-content: center;
-	    justify-content: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
 
-	  -webkit-flex-flow: row wrap;
-		 -moz-flex-flow: row wrap;
-			  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  flex-flow: row wrap;
 
-	> li {
-		// IE9
-		display: table-cell;
+  > li {
+    // IE9
+    display: table-cell;
 
-		// Modern browsers
-	  -webkit-box-flex: 1;
-		 -moz-box-flex: 1;
-			  box-flex: 1;
+    // Modern browsers
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
 
-		  -webkit-flex: 1;
-			 -moz-flex: 1;
-			  -ms-flex: 1;
-				  flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 
-   -ms-flex-item-align: stretch;
-	-webkit-align-self: stretch;
-	   -moz-align-self: stretch;
-			align-self: stretch;
-	}
+    -ms-flex-item-align: stretch;
+    -webkit-align-self: stretch;
+    -moz-align-self: stretch;
+    align-self: stretch;
+  }
 }

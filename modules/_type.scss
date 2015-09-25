@@ -1,26 +1,26 @@
 // Text Legibility
 @mixin cleartext {
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 // Word wrap
 @mixin word-wrap {
-	word-break: break-word;
-	-webkit-hyphens: auto;
-	   -moz-hyphens: auto;
-	        hyphens: auto;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
 }
 
 // Ellipsis overflow
 @mixin ellipsis {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 // Hide text (alternative to using the old "-9999em" method)
 @mixin notext {
-	font: 0/0 a;
-	color: transparent;
+  font: 0/0 a;
+  color: transparent;
 }
