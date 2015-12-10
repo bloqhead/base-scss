@@ -2,33 +2,33 @@
 // @todo Fix the indents here
 
 $site-breakpoints : (
-mobile : max-width 480px,
-tablet : min-width 481px max-width 768px,
-desktop : min-width 769px max-width 1200px,
-wide : min-width 1201px
+  mobile : max-width 480px,
+  tablet : min-width 481px max-width 768px,
+  desktop : min-width 769px max-width 1200px,
+  wide : min-width 1201px
 ) !default;
 
 @mixin breakpoint($which...) {
   $breaks : '';
   @each $breakpoint in $which {
-  @if map-has-key($site-breakpoints, $breakpoint) {
-  @if $breaks != '' {
-  $breaks : "#{$breaks}, ";
-  }
-  $breakpoint-terms : map-get($site-breakpoints, $breakpoint);
-  $list-len : length($breakpoint-terms);
-  $next-break : '';
+    @if map-has-key($site-breakpoints, $breakpoint) {
+      @if $breaks != '' {
+        $breaks : "#{$breaks}, ";
+      }
+      $breakpoint-terms : map-get($site-breakpoints, $breakpoint);
+      $list-len : length($breakpoint-terms);
+      $next-break : '';
 
-  @while($list-len > 1) {
-    @if $next-break != '' {
-      $next-break : "#{$next-break} and ";
+    @while($list-len > 1) {
+      @if $next-break != '' {
+        $next-break : "#{$next-break} and ";
+      }
+        $next-break : "#{$next-break} (#{nth($breakpoint-terms, $list-len - 1)} : #{nth($breakpoint-terms, $list-len)})";
+        $list-len : $list-len - 2;
+      }
+        $breaks : "#{$breaks} #{$next-break}";
+      }
     }
-      $next-break : "#{$next-break} (#{nth($breakpoint-terms, $list-len - 1)} : #{nth($breakpoint-terms, $list-len)})";
-      $list-len : $list-len - 2;
-    }
-      $breaks : "#{$breaks} #{$next-break}";
-    }
-  }
 
   @media #{$breaks} {
     @content;

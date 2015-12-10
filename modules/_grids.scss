@@ -1,17 +1,17 @@
 // Simple Bourbon + Neat Grid
 @for $count from 1 through 12 {
   @if $count == 12 {
-  .g-12 {
-    width: 100%;
-    display: block;
-    overflow: hidden;
-    @include clearfix;
+    .g-12 {
+      width: 100%;
+      display: block;
+      overflow: hidden;
+      @include clearfix;
 
-    img {
-      max-width: 100%;
-      height: auto;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     }
-  }
   } @else {
     .g-#{$count} {
       @include span-columns($count);

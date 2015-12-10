@@ -1,9 +1,10 @@
 // Opacity
 // Should be passed in 0.0 format
 @mixin opacity($opacity) {
+  $RoundedOpacity: round($opacity * 100);
   opacity: $opacity;
-  filter: alpha(opacity= + round($opacity*100));
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity= + round($opacity*100));
+  filter: alpha(opacity=$RoundedOpacity);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$RoundedOpacity});
 }
 
 // Hyphen fix because iOS Safari is stupid
