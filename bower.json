@@ -2,7 +2,7 @@
   "name": "base-scss",
   "description": "Base SCSS library that contains mixins and helpful tools.",
   "main": [
-    "base.scss"
+    "dist/base.scss"
   ],
   "moduleType": [
     "node"
@@ -26,9 +26,9 @@
     "ReadMe.md",
     "bower.json",
     "package.json",
-    "*.xml"
+    "debug"
   ],
-  "version": "1.5.0",
+  "version": "1.5.5",
   "homepage": "https://github.com/bloqhead/Base-SCSS",
   "repository": {
     "type": "git",
