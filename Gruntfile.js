@@ -1,22 +1,21 @@
 /*global module:false*/
 module.exports = function(grunt) {
 	grunt.initConfig({
-		// SCSS Lint
 		scsslint: {
 			files: [
-				'base.scss',
-				'modules/**/*.scss'
+				'dist/base.scss',
+				'dist/modules/**/*.scss'
 			],
 			options: {
+				compact: true,
 				colorizeOutput: true,
-				reporterOutput: 'scss-lint-report.xml'
+				reporterOutput: 'debug/Lint-Report-<%= grunt.template.today("yyyymmddhMMss") %>.xml'
 			}
 		},
-		// Watch
 		watch: {
 			files: [
-				'base.scss',
-				'modules/**/*.scss'
+				'dist/base.scss',
+				'dist/modules/**/*.scss'
 			],
 			tasks: [
 				'scsslint'

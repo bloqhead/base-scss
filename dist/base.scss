@@ -25,13 +25,6 @@
 $bourbon:           false;
 $neat:              false;
 
-// Font Families
-$georgia:           Georgia, Cambria, "Times New Roman", Times, serif;
-$helvetica:         "Helvetica Neue", Helvetica, Arial, sans-serif;
-$lucida-grande:     "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-$monospace:         "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
-$verdana:           Verdana, Geneva, sans-serif;
-
 // Headings
 $headings:          'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6';
 
@@ -44,13 +37,18 @@ $inputs:            email, number, password, search, tel, text, url, color, date
 //
 // Modules
 //
+@import 'modules/angler';
+@import 'modules/breakpoints';
+@import 'modules/flexmenu';
 @import 'modules/forms';
+@import 'modules/hamburger';
 @import 'modules/icons';
 @import 'modules/images';
 @import 'modules/lists';
+@import 'modules/pseudo-shift';
+@import 'modules/responsive-type';
 @import 'modules/type';
 @import 'modules/utility';
-@import 'modules/flexmenu';
 
 //
 // Bourbon + Neat Grids
