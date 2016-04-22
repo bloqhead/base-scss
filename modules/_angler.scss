@@ -1,0 +1,66 @@
+//
+// Angler Mixin
+//
+// Creates angled edges via pseudo elements.
+// See it in action: http://codepen.io/bloqhead/details/aNYawz/
+//
+// Usage:
+//
+//  .button--type-1 {
+//    @include angler( -25px, 10%, ['before'|'after'], ['top'|'right'|'bottom'|'left'] );
+//  }
+//
+//
+
+@mixin angler( $angle, $width_adj, $position: 'after', $transform_origin: 'bottom left' ) {
+
+  // label for debugging
+  $mixin_label: "[ `angler` mixin ]";
+
+  // bootstrap the values
+  $angle_stripped: strip-units($angle);
+  $width_final: ( $width_adj / 2 ) + 100%;
+
+  // let's determine if we need to use left
+  // or right positioning
+  $h_position: null;
+  @if $position == 'after' {
+    $h_position: 'left';
+  }
+  @else if $position == 'before' {
+    $h_position: 'right';
+  }
+  @else {
+    @error "#{$mixin_label}: You must use either `before` or `after` for your position value! Your value is #{$h_position}.";
+  }
+
+  // ensure that the width is a percentage
+  @if unit($width_adj) != "%" {
+    @error "#{$mixin_label}: The width value must be a percentage! Your value is #{$width_adj}.";
+  }
+
+  // ensure that the angle value is pixel-based
+  @if unit($angle) != "px" {
+    @error "#{$mixin_label}: The angle value must be pixel-based! Your value is #{$angle}.";
+  }
+
+  // base element styles
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+
+  // pseudo element styles
+  &:#{$position} {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    #{$h_position}: 0;
+    width: #{$width_final};
+    display: block;
+    content: "";
+    background-color: inherit;
+    @include transform( skewX( #{$angle_stripped}deg ) );
+    @include transform-origin( #{$transform_origin} );
+  }
+}

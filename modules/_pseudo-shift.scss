@@ -1,0 +1,37 @@
+//
+// Pseudo Shift
+//
+// Creates a faux full-width element
+// that goes outside its parent element.
+//
+// PLEASE NOTE:
+// you'll want to add `overflow: hidden`
+// to either the body or the parent container
+// of the element you apply this to, otherwise
+// the pseudo elements will cause horizontal
+// scrolling.
+//
+
+@mixin pseudoshift {
+  position: relative;
+  overflow: visible;
+  z-index: 0;
+
+  &:before, &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    content: " ";
+    background-color: inherit;
+    width: 9999em;
+  }
+
+  &:before {
+    left: -9999em;
+  }
+
+  &:after {
+    right: -9999em;
+  }
+}

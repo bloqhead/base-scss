@@ -1,0 +1,43 @@
+//
+// Hamburger
+//
+// This will make a simple three-line
+// "hamburger" menu button using pseudo
+// elements.
+//
+
+@mixin hamburger( $width, $height, $background ) {
+  position: relative;
+  display: block;
+  overflow: visible;
+  width: $width;
+  border: 0;
+  font-size: 0;
+  line-height: 1;
+  outline: none; // the outline looks strange on some screens
+  -webkit-appearance: none;
+          appearance: none;
+
+  &, &:before, &:after {
+    height: $height;
+    background-color: $background;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    content: "";
+  }
+
+  $newHeight: -#{(strip-units($height) * 2)}px;
+
+  &:before {
+    top: $newHeight;
+  }
+
+  &:after {
+    bottom: $newHeight;
+  }
+}
