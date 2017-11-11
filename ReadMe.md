@@ -1,4 +1,6 @@
 # Base SCSS
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/bloqhead/Base-SCSS.svg)](https://greenkeeper.io/)
 I've rebuilt Base SCSS to work as a simple, minimalist companion to existing tools like [Bourbon](http://bourbon.io) and [Neat](http://neat.bourbon.io). It's not made to replace the aforementioned tools. It just offers an additional set of things I've written for use on real world projects.
 
 ## Install with Bower
